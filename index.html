@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora LG</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <script src="calculadora.js"></script>
+    
+</head>
+<body>
+  <h1>Calculadora</h1>  
+
+  <input type="number" id="v1" placeholder="Número 1">
+  <input type="number" id="v2" placeholder="Número 2">
+  <p>
+  <button onclick="calcular('soma')">Soma</button>
+  <button onclick="calcular('subtracao')">Subtrair</button>
+  <button onclick="calcular('multiplicacao')">Multiplicar</button>
+  <button onclick="calcular('divisao')">Dividir</button>
+  <button onclick="calcular('resto')">Resto %</button>
+  </p>
+  <div id="res"></div>
+  
+  <script>
+  function calcular(operacao) {
+      const v1 = parseFloat(document.getElementById("v1").value);
+      const v2 = parseFloat(document.getElementById("v2").value);
+      let resultado;
+  
+      if (isNaN(v1) || isNaN(v2)) {
+          document.getElementById("res").innerText = "Digite dois números.";
+          return;
+      }
+  
+      switch (operacao) {
+          case 'soma':
+              resultado = v1 + v2;
+              break;
+          case 'subtracao':
+              resultado = v1 - v2;
+              break;
+          case 'multiplicacao':
+              resultado = v1 * v2;
+              break;
+          case 'divisao':
+              if (v2 === 0) {
+                  document.getElementById("res").innerText = "divisão por zero.";
+                  return;
+              }
+              resultado = v1 / v2;
+              break;
+          case 'resto':
+              if (v2 === 0) {
+                  document.getElementById("res").innerText = "Erro: divisão por zero.";
+                  return;
+              }
+              resultado = v1 % v2;
+              break;
+          default:
+              resultado = "Operação inválida.";
+      }
+  
+      document.getElementById("res").innerText = "Resultado: " + resultado;
+  }
+  </script>
+  
+  
+</body>
+</html>

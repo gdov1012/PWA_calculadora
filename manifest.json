@@ -1,0 +1,23 @@
+
+{
+    "name":"Calculadora LG",
+    "short-name":"Calc LG",
+    "start-url": ".",
+    "display":"standalone",
+    "background_color":"#E7DDFF",
+    "theme-color": "#407178",
+    "icons":
+    [
+     {
+        "src": "icons/256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+    },
+    {
+        "src": "icons/512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }
+
+    ]
+}
